@@ -3,16 +3,19 @@
     #include<stdlib.h>
     #include "y.tab.h"
     void yyerror (char *);
-    extern int yylval;
+    extern float yylval;
 %}
 %%
+START     return START;
+END       return END;
+print     return PRINT;
 [a-zA-Z]       {
                 yylval = *yytext - 'a';
                 return VARIABLE;
             }
 
     /* integers */
-[0-9]+"."[0-9]+      {
+[0-9]+      {
                 yylval = atoi(yytext);
                 return NUMBER;
             }
