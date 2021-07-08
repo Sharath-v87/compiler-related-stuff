@@ -3,7 +3,7 @@
     #include<stdlib.h>
     #include "y.tab.h"
     void yyerror (char *);
-    extern float yylval;
+    extern int yylval;
 %}
 %%
 START     return START;
