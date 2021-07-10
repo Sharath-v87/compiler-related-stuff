@@ -14,7 +14,7 @@ program:
          ;
 
 Arithmeticexp: 
-            E         {printf("%d\n",$1); }
+            E         
             | VARIABLE '=' E {sym[$1]=$3;}
             ;
 E:
@@ -25,6 +25,7 @@ E:
             | E '*' E     {$$ = $1 * $3;}
             | E '/' E     {$$ = $1 / $3;}
             | '(' E ')'   {$$ = $2;}
+            | PRINT E     {printf("%d\n",$2); }
             | END         {exit(0);}
             ;
 
