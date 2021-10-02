@@ -15,6 +15,7 @@ public:
         return false
     }
 };
+
 char Demo:: ID = 0;
 static RegisterPass<demo> res("demo","just a demo hehe");
 }
